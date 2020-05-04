@@ -51,6 +51,9 @@ class Game:
         for i in self.guessed:
             self.hint += i
 
+        if '*' not in self.guessed:
+            self.stop()
+
 
     # setting the Word
     def set_word(self, word):
@@ -60,16 +63,16 @@ class Game:
         # creating an Array with * for each Letter
         for i in self.word:
             self.guessed.append('*')
-        
 
 # just some Lines of testing Stuff
 # ##### #
 g = Game()
 g.set_word("Test")
-g.guess("k")
+g.guess("e")
+g.guess("s")
 g.guess('t')
 
-print(g.mistakes)
+print(g.is_running)
 # ##### #
 
 # starting EEL
