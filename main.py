@@ -51,19 +51,19 @@ class Game:
         for i in self.guessed:
             self.hint += i
 
-        if '*' not in self.guessed:
+        if '_' not in self.guessed:
             self.stop()
 
 
 # just some Lines of testing Stuff
 # ##### #
-g = Game()
+game = Game()
 # ##### #
 
 
 # setting the Word
 @eel.expose
-def set_word(word, self=g):
+def set_word(word, self=game):
 
     self.word = word
     self.hint = ""
@@ -75,7 +75,7 @@ def set_word(word, self=g):
         if i == ' ':
             self.guessed.append(' ')
         else:
-            self.guessed.append('*')
+            self.guessed.append('_')
 
     
     # clearing the Hint
@@ -85,6 +85,11 @@ def set_word(word, self=g):
     for i in self.guessed:
         self.hint += i
 
+
+# return Hint with guessed Letters
+@eel.expose
+def get_hidden_word(self=game):
+    return self.hint
 
 # starting EEL
 eel.start('index.html')

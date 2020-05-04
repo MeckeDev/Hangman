@@ -14,28 +14,45 @@ body {
     justify-content: center;
 }
 
-.form {
+#form_word {
     height: 50%;
     width: 60%;
     background-color: #dd3e54;
     border-radius: 2vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
 }
 
 #new_word {
     font-size: 3vw;
-    width: 60%;
+    width: 65%;
     border-radius: 1vw;
     background-color: #FFEFBA;
     color: #2c3e50;
+    margin-top: 20vh;
 }
 
 #send_word {
     font-size: 3vw;
-    width: 20%;
+    width: 30%;
     border-radius: 1vw;
     background-color: #6be585;
     color: #2c3e50;
+}
+
+#inp {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#info {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1vw;
+}
+
+#hint_word {
+    letter-spacing: 2vw;
+    font-size: 6vw;
 }

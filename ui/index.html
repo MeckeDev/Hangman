@@ -14,14 +14,26 @@
 
     </head>
 
-    <body>
+    <body onload="hide_guess()">
         
         <div class="container">
 
-            <div class="form">
+            <div id="form_word">
 
-                <input type="text" name="word" id="new_word" placeholder="Enter your Word...">
-                <button type="button" name="bnt_word" id="send_word" onclick="set_word()">Confirm</button>
+               <div id="inp">
+                   <input type="text" name="word" id="new_word" placeholder="Enter your Word...">
+                    <button type="button" name="bnt_word" id="send_word" onclick="set_word()">Confirm</button>
+               </div> 
+                
+                <div id="info">
+                    <p> *leave empty for a random Word </p>
+                </div>
+
+            </div>
+
+            <div id="game">
+
+                <h1 id="hint_word">Nothing here</h1>
 
             </div>
 
