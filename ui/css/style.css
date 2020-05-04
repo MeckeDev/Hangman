@@ -45,6 +45,23 @@ body {
     margin-right: auto;
 }
 
+
+#new_guess {
+    font-size: 4vh;
+    width: 65%;
+    border-radius: 1vh;
+    background-color: #FFEFBA;
+    color: #2c3e50;
+}
+
+#send_guess {
+    font-size: 4vh;
+    width: 30%;
+    border-radius: 1vh;
+    background-color: #6be585;
+    color: #2c3e50;
+}
+
 #info {
     width: 80%;
     margin-left: auto;
@@ -53,6 +70,7 @@ body {
 }
 
 #hint_word {
+    display: inline;
     letter-spacing: 2vh;
     font-size: 6vh;
 }

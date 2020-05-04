@@ -21,44 +21,47 @@ class Game:
         self.score = 0              # will be calculated based on speed and wrong guesses
 
 
-    # starting the Game
-    def start(self):
-        self.is_running = True
-
-
-    # stopping the Game
-    def stop(self):
-        self.is_running = False
-
-
-    # Guessing a Letter
-    def guess(self, letter):
-
-        # if the Letter is not in the Word add 1 to the mistakes
-        if letter not in self.word.lower():
-            self.mistakes += 1
-
-        # checking each Letter in the Word if it's the guessed Letter
-        for i in range(len(self.word)):
-
-            if self.word[i].lower() == letter.lower():
-                self.guessed[i] = letter.lower()
-
-        # clearing the Hint
-        self.hint = ""
-
-        # filling the Hint with all guessed Letters
-        for i in self.guessed:
-            self.hint += i
-
-        if '_' not in self.guessed:
-            self.stop()
-
-
 # just some Lines of testing Stuff
 # ##### #
 game = Game()
 # ##### #
+
+
+# starting the Game
+@eel.expose
+def start(self=game):
+    self.is_running = True
+
+
+# stopping the Game
+@eel.expose
+def stop(self=game):
+    self.is_running = False
+
+
+# Guessing a Letter
+@eel.expose
+def guess(letter, self=game):
+
+    # if the Letter is not in the Word add 1 to the mistakes
+    if letter not in self.word.lower():
+        self.mistakes += 1
+
+    # checking each Letter in the Word if it's the guessed Letter
+    for i in range(len(self.word)):
+
+        if self.word[i].lower() == letter.lower():
+            self.guessed[i] = letter.lower()
+
+    # clearing the Hint
+    self.hint = ""
+
+    # filling the Hint with all guessed Letters
+    for i in self.guessed:
+        self.hint += i
+
+    if '_' not in self.guessed:
+        self.stop()
 
 
 # setting the Word

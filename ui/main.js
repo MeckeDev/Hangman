@@ -24,3 +24,11 @@ function hide_guess() {
 function set_hint(x) {
     hint_word.innerHTML = x
 }
+
+async function set_guess() {
+
+    guess = document.getElementById("new_guess").value
+    await eel.guess(guess)
+    await eel.get_hidden_word()(set_hint)
+
+}
