@@ -55,25 +55,36 @@ class Game:
             self.stop()
 
 
-    # setting the Word
-    def set_word(self, word):
-
-        self.word = word
-
-        # creating an Array with * for each Letter
-        for i in self.word:
-            self.guessed.append('*')
-
 # just some Lines of testing Stuff
 # ##### #
 g = Game()
-g.set_word("Test")
-g.guess("e")
-g.guess("s")
-g.guess('t')
-
-print(g.is_running)
 # ##### #
+
+
+# setting the Word
+@eel.expose
+def set_word(word, self=g):
+
+    self.word = word
+    self.hint = ""
+    self.guessed = []
+    self.start()
+
+    # creating an Array with * for each Letter
+    for i in self.word:
+        if i == ' ':
+            self.guessed.append(' ')
+        else:
+            self.guessed.append('*')
+
+    
+    # clearing the Hint
+    self.hint = ""
+
+    # filling the Hint with all guessed Letters
+    for i in self.guessed:
+        self.hint += i
+
 
 # starting EEL
 eel.start('index.html')

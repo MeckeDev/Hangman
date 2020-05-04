@@ -1,1 +1,41 @@
 /* Main Styles for the Game */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #493240;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    height: 50%;
+    width: 60%;
+    background-color: #dd3e54;
+    border-radius: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#new_word {
+    font-size: 3vw;
+    width: 60%;
+    border-radius: 1vw;
+    background-color: #FFEFBA;
+    color: #2c3e50;
+}
+
+#send_word {
+    font-size: 3vw;
+    width: 20%;
+    border-radius: 1vw;
+    background-color: #6be585;
+    color: #2c3e50;
+}

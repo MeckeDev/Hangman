@@ -7,6 +7,7 @@
         <!-- importing eel to call Python with Javascript -->
         <script type="text/javascript" src="/eel.js"></script>
         <script type="text/javascript" src="main.js"></script>
+        <link rel="stylesheet" href="css/style.css">
 
         <!--  -->
         <title>Hangman by Mecke</title>
@@ -19,8 +20,8 @@
 
             <div class="form">
 
-                <input type="text" name="word" id="new_word">
-                <input type="button" name="bnt_word" id="send_word" value="Accept">
+                <input type="text" name="word" id="new_word" placeholder="Enter your Word...">
+                <button type="button" name="bnt_word" id="send_word" onclick="set_word()">Confirm</button>
 
             </div>
 
