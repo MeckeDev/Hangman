@@ -61,7 +61,7 @@ def guess(letter, self=game):
         self.hint += i
 
     if '_' not in self.guessed:
-        self.stop()
+        stop()
 
 
 # setting the Word
@@ -71,7 +71,7 @@ def set_word(word, self=game):
     self.word = word
     self.hint = ""
     self.guessed = []
-    self.start()
+    start()
 
     # creating an Array with * for each Letter
     for i in self.word:
