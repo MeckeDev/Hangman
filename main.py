@@ -44,7 +44,7 @@ def stop(self=game):
 def guess(letter, self=game):
 
     # if the Letter is not in the Word add 1 to the mistakes
-    if letter not in self.word.lower():
+    if letter.lower() not in self.word.lower():
         self.mistakes += 1
 
     # checking each Letter in the Word if it's the guessed Letter
@@ -55,6 +55,7 @@ def guess(letter, self=game):
 
     # clearing the Hint
     self.hint = ""
+    print(letter)
 
     # filling the Hint with all guessed Letters
     for i in self.guessed:
@@ -93,6 +94,17 @@ def set_word(word, self=game):
 @eel.expose
 def get_hidden_word(self=game):
     return self.hint
+
+@eel.expose
+def gen_btns():
+
+    btns = ""
+    letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+    for letter in letters:
+        btns += f'<button type="button" name="bnt_word" class="send_guess" onclick="set_guess(\'{letter}\')">{letter}</button>'
+
+    return btns
 
 # starting EEL
 eel.start('index.html')

@@ -45,21 +45,19 @@ body {
     margin-right: auto;
 }
 
-
-#new_guess {
-    font-size: 4vh;
-    width: 65%;
-    border-radius: 1vh;
-    background-color: #FFEFBA;
-    color: #2c3e50;
-}
-
-#send_guess {
-    font-size: 4vh;
-    width: 30%;
+.send_guess {
+    width: 3vw;
+    height: 8vh;
     border-radius: 1vh;
     background-color: #6be585;
     color: #2c3e50;
+}
+
+#game {
+    height: 50%;
+    width: 60%;
+    background-color: #dd3e54;
+    border-radius: 2vh;
 }
 
 #info {
@@ -70,7 +68,24 @@ body {
 }
 
 #hint_word {
-    display: inline;
     letter-spacing: 2vh;
     font-size: 6vh;
+}
+
+#hint {
+    text-align: center;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 20vh;
+}
+
+#guessing {
+    display: flex;
+    margin-left: 4%;
+    width: 50%;
+    height: 20vh;
+    margin-top: 30vh;
+    position: absolute;
 }

@@ -12,6 +12,17 @@ async function set_word() {
     hint_word = document.getElementById("hint_word")
     eel.get_hidden_word()(set_hint)
 
+    await gen_btns()
+
+}
+
+async function gen_btns() {
+
+    x = await eel.gen_btns()()
+
+    document.getElementById("guessing").innerHTML = x
+
+
 }
 
 function hide_guess() {
@@ -25,10 +36,12 @@ function set_hint(x) {
     hint_word.innerHTML = x
 }
 
-async function set_guess() {
+async function set_guess(x) {
 
-    guess = document.getElementById("new_guess").value
-    await eel.guess(guess)
+    
+
+    console.log(x)
+    await eel.guess(x)
     await eel.get_hidden_word()(set_hint)
 
 }
